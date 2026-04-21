@@ -82,8 +82,6 @@
 }
 
 .brand-title,
-.chapter-title,
-.custom-title,
 .store-title {
     display: block;
     color: #1f2420;
@@ -92,9 +90,7 @@
     line-height: 1.32;
 }
 
-.brand-text,
-.chapter-copy,
-.custom-copy {
+.brand-text {
     display: block;
     color: #59635b;
     font-size: 26rpx;
@@ -102,73 +98,23 @@
     margin-top: 12rpx;
 }
 
-.chapter-list {
+.address-card {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     gap: 20rpx;
-}
-
-.chapter-card {
-    overflow: hidden;
-}
-
-.chapter-image {
-    width: 100%;
-    height: 260rpx;
-    display: block;
-}
-
-.chapter-body {
-    padding: 24rpx 26rpx 28rpx;
-}
-
-.custom-entry {
-    position: relative;
-    min-height: 520rpx;
-    overflow: hidden;
-    border-radius: 28rpx;
-    background: #1f2420;
-}
-
-.custom-image {
-    width: 100%;
-    height: 520rpx;
-    display: block;
-}
-
-.custom-entry::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(255, 252, 247, 0.05), rgba(31, 36, 32, 0.58));
-}
-
-.custom-overlay {
-    position: absolute;
-    left: 28rpx;
-    right: 28rpx;
-    bottom: 28rpx;
-    z-index: 1;
-}
-
-.custom-title,
-.custom-copy {
-    color: #fffdf8;
-}
-
-.custom-button {
-    width: 260rpx;
-    margin-top: 22rpx;
-}
-
-.store-card {
-    display: flex;
-    flex-direction: column;
-    gap: 12rpx;
     padding: 28rpx;
 }
 
-.store-button {
-    margin-top: 12rpx;
-    width: 100%;
+.address-card .muted {
+    display: block;
+    margin-top: 8rpx;
+    line-height: 1.45;
+}
+
+.address-button {
+    min-width: 190rpx;
+    min-height: 72rpx;
+    padding: 0 24rpx;
+    font-size: 25rpx;
 }

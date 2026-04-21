@@ -1,16 +1,17 @@
 <view class="page product-detail-page">
-    <view class="shop-hero">
-        <image class="shop-hero-image" src="{{hero}}" mode="aspectFill"></image>
-        <view class="shop-hero-copy">
-            <text class="shop-kicker">玉珂diy手作</text>
-            <text class="shop-title">成品商店</text>
-        </view>
+    <view class="shop-head">
+        <text class="shop-title">购物袋</text>
+        <button class="cart-button" bindtap="openCart">
+            <text>袋</text>
+            <text wx:if="{{cartItems.length}}" class="cart-badge">{{cartItems.length}}</text>
+        </button>
     </view>
 
+    <button class="inspire-button">探索手作灵感</button>
+
     <view class="section">
-        <view class="section-title">
-            <text class="section-title-main">成品列表</text>
-            <text class="section-title-sub">点开选规格</text>
+        <view class="section-title centered-title">
+            <text class="section-title-main">为你推荐</text>
         </view>
         <view class="shop-grid">
             <view wx:for="{{products}}" wx:key="id" class="shop-card" data-id="{{item.id}}" bindtap="selectProduct">
@@ -19,16 +20,14 @@
                 </view>
                 <view class="shop-card-body">
                     <text class="shop-card-title">{{item.title}}</text>
-                    <text class="shop-card-price">{{item.priceText}}</text>
-                    <text class="shop-card-action">选择规格</text>
+                    <text class="shop-card-desc">{{item.description}}</text>
+                    <view class="shop-card-foot">
+                        <text class="shop-card-price">{{item.priceText}}</text>
+                        <button class="bag-button" data-id="{{item.id}}" catchtap="quickAddCart">袋+</button>
+                    </view>
                 </view>
             </view>
         </view>
-    </view>
-
-    <view class="cart-strip card">
-        <text>购物车</text>
-        <text class="cart-count">{{cartCount}} 件</text>
     </view>
 
     <view wx:if="{{sheetVisible}}" class="sheet-mask" bindtap="closeSheet"></view>
@@ -62,8 +61,39 @@
         </view>
 
         <view class="sheet-actions">
-            <button class="secondary-button" bindtap="addCart">加入购物车</button>
+            <button class="secondary-button" bindtap="addCart">加入购物袋</button>
             <button class="primary-button" bindtap="buyNow">立即购买</button>
         </view>
+    </view>
+
+    <view wx:if="{{cartVisible}}" class="sheet-mask" bindtap="closeCart"></view>
+    <view wx:if="{{cartVisible}}" class="cart-sheet">
+        <view class="sheet-handle"></view>
+        <view class="cart-head">
+            <text class="cart-title">购物袋</text>
+            <button class="sheet-close" bindtap="closeCart">×</button>
+        </view>
+        <view class="delivery-row">
+            <text>到店自提 / 配送</text>
+            <text>库存以门店确认为准</text>
+        </view>
+        <view wx:if="{{cartItems.length === 0}}" class="empty-cart">
+            <text>购物袋还是空的</text>
+            <text>先挑一件喜欢的作品。</text>
+        </view>
+        <view wx:for="{{cartItems}}" wx:key="id" class="cart-item">
+            <view class="cart-thumb">
+                <text>{{item.coverLabel}}</text>
+            </view>
+            <view class="cart-info">
+                <text class="cart-item-title">{{item.title}}</text>
+                <text class="muted">{{item.sku}}</text>
+                <view class="cart-item-foot">
+                    <text class="price">{{item.priceText}}</text>
+                    <text class="quantity">×{{item.quantity}}</text>
+                </view>
+            </view>
+        </view>
+        <button class="primary-button checkout-button" bindtap="checkoutCart">去确认</button>
     </view>
 </view>

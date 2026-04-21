@@ -26,35 +26,12 @@
         </view>
     </view>
 
-    <view class="section">
-        <view class="section-title">
-            <text class="section-title-main">手作灵感</text>
-            <text class="section-title-sub">先选材料</text>
+    <view class="section address-card card">
+        <view>
+            <text class="store-title">{{home.store.name}}</text>
+            <text class="muted">{{home.store.address}}</text>
+            <text class="muted">{{home.store.hours}}</text>
         </view>
-        <view class="chapter-list">
-            <view wx:for="{{home.chapters}}" wx:key="title" class="chapter-card card">
-                <image class="chapter-image" src="{{item.image}}" mode="aspectFill"></image>
-                <view class="chapter-body">
-                    <text class="chapter-title">{{item.title}}</text>
-                    <text class="chapter-copy">{{item.copy}}</text>
-                </view>
-            </view>
-        </view>
-    </view>
-
-    <view class="section custom-entry" bindtap="goCustom">
-        <image class="custom-image" src="{{home.visuals.custom}}" mode="aspectFill"></image>
-        <view class="custom-overlay">
-            <text class="custom-title">选择一种材料开始</text>
-            <text class="custom-copy">玉石、陶艺、木作、香氛，都从一张图开始。</text>
-            <button class="primary-button custom-button">进入定制</button>
-        </view>
-    </view>
-
-    <view class="section store-card card">
-        <text class="store-title">{{home.store.name}}</text>
-        <text class="muted">{{home.store.address}}</text>
-        <text class="muted">{{home.store.hours}}</text>
-        <button class="secondary-button store-button" bindtap="goOrders">查看我的预约</button>
+        <button class="secondary-button address-button" bindtap="goOrders">我的预约</button>
     </view>
 </view>

@@ -4,9 +4,18 @@
 
 .member-name {
     display: block;
-    font-size: 42rpx;
-    font-weight: 800;
-    margin-bottom: 10rpx;
+    color: #1f2420;
+    font-size: 40rpx;
+    font-weight: 900;
+    line-height: 1.25;
+}
+
+.member-sub {
+    display: block;
+    color: #8a877f;
+    font-size: 25rpx;
+    line-height: 1.45;
+    margin-top: 10rpx;
 }
 
 .login-actions {
@@ -21,12 +30,69 @@
     font-size: 26rpx;
 }
 
-.login-note {
+.panel-card {
+    padding: 30rpx;
+    margin-top: 24rpx;
+}
+
+.panel-title {
     display: block;
+    color: #1f2420;
+    font-size: 36rpx;
+    font-weight: 900;
+    margin-bottom: 26rpx;
+}
+
+.asset-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 34rpx;
+}
+
+.asset-item,
+.function-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 132rpx;
+}
+
+.asset-icon,
+.function-icon {
+    width: 64rpx;
+    height: 64rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999rpx;
+    background: #f3eadc;
+    color: #6a5a45;
+    font-size: 28rpx;
+    font-weight: 900;
+    margin-bottom: 14rpx;
+}
+
+.asset-name,
+.function-name {
+    color: #1f2420;
+    font-size: 27rpx;
+    font-weight: 800;
+}
+
+.asset-desc {
     color: #8a877f;
     font-size: 23rpx;
-    line-height: 1.55;
-    margin-top: 18rpx;
+    margin-top: 8rpx;
+}
+
+.function-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 34rpx;
+}
+
+.function-item {
+    min-height: 116rpx;
 }
 
 .order-card {
@@ -43,13 +109,13 @@
 
 .status {
     color: #3f6f5a;
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .order-title {
     display: block;
     font-size: 32rpx;
-    font-weight: 800;
+    font-weight: 850;
     margin: 12rpx 0 8rpx;
 }
 

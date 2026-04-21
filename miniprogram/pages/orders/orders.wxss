@@ -9,6 +9,26 @@
     margin-bottom: 10rpx;
 }
 
+.login-actions {
+    display: flex;
+    gap: 16rpx;
+    margin-top: 24rpx;
+}
+
+.login-button {
+    flex: 1;
+    min-height: 76rpx;
+    font-size: 26rpx;
+}
+
+.login-note {
+    display: block;
+    color: #8a877f;
+    font-size: 23rpx;
+    line-height: 1.55;
+    margin-top: 18rpx;
+}
+
 .order-card {
     padding: 28rpx;
     margin-bottom: 16rpx;

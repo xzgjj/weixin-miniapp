@@ -1,37 +1,54 @@
 <view class="page detail-page">
-    <view class="media-frame detail-media">
-        <text class="media-label">{{service.coverLabel}}</text>
-    </view>
-    <view class="section card detail-card">
-        <text class="detail-category">{{service.category}}</text>
-        <text class="detail-title">{{service.title}}</text>
-        <view class="detail-meta">
-            <text class="price">{{service.priceText}}</text>
-            <text class="muted">{{service.duration}}</text>
-        </view>
-        <view class="tag-line">
-            <text wx:for="{{service.tags}}" wx:key="*this" class="tag">{{item}}</text>
-        </view>
-        <text class="detail-copy">{{service.description}}</text>
+    <view class="section-title top-title">
+        <text class="section-title-main">体验项目</text>
+        <text class="section-title-sub">选一项开始</text>
     </view>
 
-    <view class="section card info-card">
-        <text class="block-title">你会完成什么</text>
-        <text class="muted">{{service.result}}</text>
-    </view>
-
-    <view class="section card info-card">
-        <text class="block-title">体验流程</text>
-        <view wx:for="{{service.steps}}" wx:key="*this" class="step-line">
-            <text class="step-index">{{index + 1}}</text>
-            <text>{{item}}</text>
+    <scroll-view scroll-x class="service-tabs">
+        <view class="service-tab-row">
+            <view wx:for="{{services}}" wx:key="id" class="service-tab {{service.id === item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="selectService">
+                <image class="service-tab-image" src="{{item.image}}" mode="aspectFill"></image>
+                <view class="service-tab-copy">
+                    <text class="service-tab-title">{{item.category}}</text>
+                    <text class="service-tab-sub">{{item.duration}}</text>
+                </view>
+            </view>
         </view>
-    </view>
+    </scroll-view>
 
-    <view class="section card info-card rules-card">
-        <text class="block-title">预约须知</text>
-        <view wx:for="{{service.rules}}" wx:key="*this" class="rule-line">
-            <text>{{item}}</text>
+    <view class="service-panel card">
+        <image class="service-hero" src="{{service.image}}" mode="aspectFill"></image>
+        <view class="service-content">
+            <text class="detail-category">{{service.category}}</text>
+            <text class="detail-title">{{service.title}}</text>
+            <view class="detail-meta">
+                <text class="price">{{service.priceText}}</text>
+                <text class="muted">{{service.duration}}</text>
+            </view>
+            <view class="tag-line">
+                <text wx:for="{{service.tags}}" wx:key="*this" class="tag">{{item}}</text>
+            </view>
+            <text class="detail-copy">{{service.description}}</text>
+
+            <view class="info-block">
+                <text class="block-title">完成作品</text>
+                <text class="detail-copy compact">{{service.result}}</text>
+            </view>
+
+            <view class="info-block">
+                <text class="block-title">体验流程</text>
+                <view wx:for="{{service.steps}}" wx:key="*this" class="step-line">
+                    <text class="step-index">{{index + 1}}</text>
+                    <text>{{item}}</text>
+                </view>
+            </view>
+
+            <view class="info-block rules-card">
+                <text class="block-title">预约须知</text>
+                <view wx:for="{{service.rules}}" wx:key="*this" class="rule-line">
+                    <text>{{item}}</text>
+                </view>
+            </view>
         </view>
     </view>
 

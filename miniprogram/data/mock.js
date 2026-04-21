@@ -17,18 +17,13 @@ const homeData = {
     chapters: [
         {
             title: '先看见空间',
-            copy: '门店不是货架，而是一张可以坐下来慢慢选择材料的工作台。',
+            copy: '创建心动。',
             image: '/assets/visuals/store-space.jpg'
         },
         {
-            title: '再选择材料',
-            copy: '玉石、陶土、木料和香氛各有气质，定制页会用主题图带你进入对应门类。',
-            image: '/assets/visuals/custom-overview.jpg'
-        },
-        {
-            title: '成品去商城',
-            copy: '已经完成的作品、常备款和可自提商品统一放在商城，不打断首页的品牌叙事。',
-            image: '/assets/visuals/shop-hero.jpg'
+            title: '玉石珠、配饰、手围测量',
+            copy: '先选材料，再开始制作。',
+            image: '/assets/visuals/theme-jade.jpg'
         }
     ],
     featuredServices: ['jade-bracelet', 'pottery-cup', 'wood-tray', 'fragrance-candle'],
@@ -50,6 +45,7 @@ const services = [
         priceText: '¥168 起',
         duration: '90 分钟',
         coverLabel: '玉石珠、配饰、手围测量',
+        image: '/assets/visuals/theme-jade.jpg',
         description: '选择玉石珠、隔珠和配饰，按手围完成一条专属手串。适合礼物、纪念日和日常佩戴。',
         result: '完成玉石手串，可当天带走，可选择基础包装。',
         tags: ['玉石搭配', '可当天带走', '纪念日'],
@@ -69,6 +65,7 @@ const services = [
         priceText: '¥128 起',
         duration: '120 分钟',
         coverLabel: '陶土、拉坯、釉色样片',
+        image: '/assets/visuals/theme-pottery.jpg',
         description: '从一团泥开始，完成一只属于自己的手作杯。适合第一次体验陶艺的朋友。',
         result: '完成拉坯作品，烧制后到店自提或快递。',
         tags: ['新手友好', '可烧制', '情侣/亲子'],
@@ -89,6 +86,7 @@ const services = [
         priceText: '¥268 起',
         duration: '180 分钟',
         coverLabel: '浅木、砂纸、安全工具',
+        image: '/assets/visuals/theme-wood.jpg',
         description: '在老师指导下完成一个桌面木托盘，学习打磨、组装和木蜡油处理。',
         result: '完成木质托盘，可当天带走。',
         tags: ['工具指导', '团建热门', '可当天带走'],
@@ -107,6 +105,7 @@ const services = [
         priceText: '¥98 起',
         duration: '90 分钟',
         coverLabel: '精油、干花、暖色蜡杯',
+        image: '/assets/visuals/theme-fragrance.jpg',
         description: '选择香型、花材和容器，完成一份适合自用或纪念日的香氛蜡烛。',
         result: '完成香氛蜡烛，可当天带走。',
         tags: ['香气搭配', '可当天带走', '轻松入门'],

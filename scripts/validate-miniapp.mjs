@@ -23,6 +23,13 @@ const requiredVisualAssets = [
     'miniprogram/assets/visuals/theme-fragrance.jpg'
 ];
 
+const bannedUserCopy = [
+    '首页负责',
+    '成品购买放在这里',
+    '不在首页堆入口',
+    '正式版将'
+];
+
 const readJson = (filePath) => {
     const fullPath = path.join(root, filePath);
     return JSON.parse(fs.readFileSync(fullPath, 'utf8'));
@@ -61,6 +68,11 @@ for (const page of appConfig.pages) {
     const wxml = fs.readFileSync(wxmlPath, 'utf8');
     if (/bind\w+="\{\{/.test(wxml)) {
         throw new Error(`Dynamic event binding is not allowed in ${page}.wxml`);
+    }
+    for (const copy of bannedUserCopy) {
+        if (wxml.includes(copy)) {
+            throw new Error(`Developer-facing copy "${copy}" should not appear in ${page}.wxml`);
+        }
     }
 }
 

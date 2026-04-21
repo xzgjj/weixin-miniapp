@@ -2,59 +2,68 @@
     <view class="shop-hero">
         <image class="shop-hero-image" src="{{hero}}" mode="aspectFill"></image>
         <view class="shop-hero-copy">
-            <text class="shop-kicker">玉珂diy手作商城</text>
-            <text class="shop-title">成品购买放在这里</text>
-            <text class="shop-subtitle">首页负责品牌感，商城负责清楚地选款、看规格和下单。</text>
+            <text class="shop-kicker">玉珂diy手作</text>
+            <text class="shop-title">成品商店</text>
         </view>
     </view>
 
     <view class="section">
         <view class="section-title">
             <text class="section-title-main">成品列表</text>
-            <text class="section-title-sub">可自提或配送</text>
+            <text class="section-title-sub">点开选规格</text>
         </view>
         <view class="shop-grid">
-            <view wx:for="{{products}}" wx:key="id" class="shop-card {{product.id === item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="selectProduct">
+            <view wx:for="{{products}}" wx:key="id" class="shop-card" data-id="{{item.id}}" bindtap="selectProduct">
                 <view class="shop-thumb">
                     <text>{{item.coverLabel}}</text>
                 </view>
                 <view class="shop-card-body">
                     <text class="shop-card-title">{{item.title}}</text>
                     <text class="shop-card-price">{{item.priceText}}</text>
+                    <text class="shop-card-action">选择规格</text>
                 </view>
             </view>
         </view>
     </view>
 
-    <view class="section card product-info">
-        <text class="product-title">{{product.title}}</text>
-        <text class="price">{{product.priceText}}</text>
-        <view class="tag-line">
-            <text wx:for="{{product.tags}}" wx:key="*this" class="tag tag-warm">{{item}}</text>
+    <view class="cart-strip card">
+        <text>购物车</text>
+        <text class="cart-count">{{cartCount}} 件</text>
+    </view>
+
+    <view wx:if="{{sheetVisible}}" class="sheet-mask" bindtap="closeSheet"></view>
+    <view wx:if="{{sheetVisible}}" class="sku-sheet">
+        <view class="sheet-handle"></view>
+        <view class="sheet-head">
+            <view>
+                <text class="product-title">{{product.title}}</text>
+                <text class="price">{{product.priceText}}</text>
+            </view>
+            <button class="sheet-close" bindtap="closeSheet">×</button>
         </view>
         <text class="copy">{{product.description}}</text>
-    </view>
 
-    <view class="section card sku-card">
-        <text class="block-title">规格选择</text>
-        <view class="sku-list">
-            <view wx:for="{{product.skus}}" wx:key="*this" class="sku-pill {{selectedSku === item ? 'active' : ''}}" data-sku="{{item}}" bindtap="selectSku">
-                <text>{{item}}</text>
+        <view class="sheet-block">
+            <text class="block-title">规格</text>
+            <view class="sku-list">
+                <view wx:for="{{product.skus}}" wx:key="*this" class="sku-pill {{selectedSku === item ? 'active' : ''}}" data-sku="{{item}}" bindtap="selectSku">
+                    <text>{{item}}</text>
+                </view>
             </view>
         </view>
-    </view>
 
-    <view class="section card info-card">
-        <text class="block-title">配送与自提</text>
-        <text class="copy">支持到店自提，配送能力将在正式版接入后台配置。包装、备注和配送方式由后台统一维护。</text>
-    </view>
-
-    <view class="bottom-action">
-        <view class="summary">
-            <text class="muted">已选</text>
-            <text class="summary-main">{{selectedSku}}</text>
+        <view class="sheet-block quantity-row">
+            <text class="block-title">数量</text>
+            <view class="stepper">
+                <button data-delta="-1" bindtap="changeQuantity">-</button>
+                <text>{{quantity}}</text>
+                <button data-delta="1" bindtap="changeQuantity">+</button>
+            </view>
         </view>
-        <button class="secondary-button">加入购物车</button>
-        <button class="primary-button">立即购买</button>
+
+        <view class="sheet-actions">
+            <button class="secondary-button" bindtap="addCart">加入购物车</button>
+            <button class="primary-button" bindtap="buyNow">立即购买</button>
+        </view>
     </view>
 </view>

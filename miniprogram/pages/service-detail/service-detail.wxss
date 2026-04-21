@@ -2,28 +2,97 @@
     padding-bottom: 160rpx;
 }
 
-.detail-media {
-    min-height: 520rpx;
+.top-title {
+    margin-top: 8rpx;
 }
 
-.detail-card,
-.info-card {
-    padding: 28rpx;
+.service-tabs {
+    white-space: nowrap;
+    margin-bottom: 24rpx;
+}
+
+.service-tab-row {
+    display: inline-flex;
+    gap: 18rpx;
+}
+
+.service-tab {
+    position: relative;
+    display: inline-block;
+    width: 240rpx;
+    height: 170rpx;
+    overflow: hidden;
+    border-radius: 22rpx;
+    border: 2rpx solid transparent;
+    background: #eadfce;
+}
+
+.service-tab.active {
+    border-color: #3f6f5a;
+}
+
+.service-tab-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.service-tab::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(31, 36, 32, 0.02), rgba(31, 36, 32, 0.58));
+}
+
+.service-tab-copy {
+    position: absolute;
+    left: 16rpx;
+    right: 16rpx;
+    bottom: 14rpx;
+    z-index: 1;
+}
+
+.service-tab-title {
+    display: block;
+    color: #fffdf8;
+    font-size: 28rpx;
+    font-weight: 850;
+}
+
+.service-tab-sub {
+    display: block;
+    color: rgba(255, 253, 248, 0.82);
+    font-size: 22rpx;
+    margin-top: 4rpx;
+}
+
+.service-panel {
+    overflow: hidden;
+}
+
+.service-hero {
+    width: 100%;
+    height: 360rpx;
+    display: block;
+}
+
+.service-content {
+    padding: 30rpx;
 }
 
 .detail-category {
     display: block;
     color: #3f6f5a;
     font-size: 24rpx;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 10rpx;
 }
 
 .detail-title {
     display: block;
-    font-size: 46rpx;
-    font-weight: 800;
-    line-height: 1.2;
+    font-size: 44rpx;
+    font-weight: 900;
+    line-height: 1.22;
 }
 
 .detail-meta {
@@ -41,14 +110,24 @@
     display: block;
     color: #4f594f;
     font-size: 28rpx;
-    line-height: 1.7;
+    line-height: 1.72;
     margin-top: 18rpx;
+}
+
+.detail-copy.compact {
+    margin-top: 8rpx;
+}
+
+.info-block {
+    margin-top: 30rpx;
+    padding-top: 26rpx;
+    border-top: 1rpx solid #efe7dc;
 }
 
 .block-title {
     display: block;
     font-size: 32rpx;
-    font-weight: 800;
+    font-weight: 850;
     margin-bottom: 18rpx;
 }
 
@@ -69,11 +148,15 @@
     justify-content: center;
     background: #edf3ee;
     color: #3f6f5a;
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .rule-line {
     padding: 14rpx 0;
     color: #4f594f;
     border-top: 1rpx solid #efe7dc;
+}
+
+.rules-card .rule-line:first-of-type {
+    border-top: 0;
 }

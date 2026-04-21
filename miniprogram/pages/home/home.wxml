@@ -20,16 +20,16 @@
         <view class="brand-card card">
             <image class="brand-image" src="{{home.visuals.store}}" mode="aspectFill"></image>
             <view class="brand-copy">
-                <text class="brand-title">不是来选商品，是来完成一件自己的作品</text>
-                <text class="brand-text">玉珂diy手作把玉石、陶艺、木作和香氛放在同一张工作台上，用统一的色彩和材料语言，让每一次到店都有清楚的选择和温柔的过程。</text>
+                <text class="brand-title">创建心动</text>
+                <text class="brand-text">坐下来，选一件材料，慢慢做成自己的作品。</text>
             </view>
         </view>
     </view>
 
     <view class="section">
         <view class="section-title">
-            <text class="section-title-main">设计主题</text>
-            <text class="section-title-sub">一套视觉，不同手作</text>
+            <text class="section-title-main">手作灵感</text>
+            <text class="section-title-sub">先选材料</text>
         </view>
         <view class="chapter-list">
             <view wx:for="{{home.chapters}}" wx:key="title" class="chapter-card card">
@@ -46,7 +46,7 @@
         <image class="custom-image" src="{{home.visuals.custom}}" mode="aspectFill"></image>
         <view class="custom-overlay">
             <text class="custom-title">选择一种材料开始</text>
-            <text class="custom-copy">玉石、陶艺、木作、香氛进入定制页后再选择，不在首页堆入口。</text>
+            <text class="custom-copy">玉石、陶艺、木作、香氛，都从一张图开始。</text>
             <button class="primary-button custom-button">进入定制</button>
         </view>
     </view>

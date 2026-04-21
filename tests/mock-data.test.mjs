@@ -8,7 +8,7 @@ const { homeData, services, products, customOptions, orders } = require('../mini
 test('home data exposes brand and core entries', () => {
     assert.equal(homeData.brandName, '玉珂diy手作');
     assert.ok(homeData.visuals.hero.endsWith('home-hero.jpg'));
-    assert.ok(homeData.chapters.some((chapter) => chapter.title === '成品去商城'));
+    assert.ok(homeData.chapters.some((chapter) => chapter.title === '玉石珠、配饰、手围测量'));
     assert.ok(homeData.featuredServices.length >= 4);
 });
 

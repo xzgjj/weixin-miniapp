@@ -67,13 +67,15 @@
 
 当前仓库处于项目准备阶段，尚未建立代码脚手架。
 
-建议后续优先评估：
+推荐 0-1 阶段采用：
 
 - 前端：微信小程序原生
 - 组件库：TDesign MiniProgram
-- 后端：CloudBase 或自建 Node.js/Java 服务
-- 数据库：MySQL 或 CloudBase 数据库
+- 后端：CloudBase 云函数/HTTP API
+- 数据库：CloudBase 数据库起步，订单/支付复杂后可演进 MySQL
 - 支付：微信支付
+
+完整架构规划见 [ARCHITECTURE_PLAN.md](ARCHITECTURE_PLAN.md)。
 
 ## 构建与运行
 
@@ -90,4 +92,3 @@ npm test
 
 - `main`：主分支。
 - `v1`：当前第一阶段文档与项目初始化分支。
-

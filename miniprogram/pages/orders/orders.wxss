@@ -1,0 +1,40 @@
+.member-card {
+    padding: 32rpx;
+}
+
+.member-name {
+    display: block;
+    font-size: 42rpx;
+    font-weight: 800;
+    margin-bottom: 10rpx;
+}
+
+.order-card {
+    padding: 28rpx;
+    margin-bottom: 16rpx;
+}
+
+.order-head,
+.order-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.status {
+    color: #3f6f5a;
+    font-weight: 800;
+}
+
+.order-title {
+    display: block;
+    font-size: 32rpx;
+    font-weight: 800;
+    margin: 12rpx 0 8rpx;
+}
+
+.mini-button {
+    min-height: 64rpx;
+    padding: 0 22rpx;
+    font-size: 24rpx;
+}

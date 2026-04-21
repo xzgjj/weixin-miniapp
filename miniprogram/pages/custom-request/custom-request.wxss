@@ -1,0 +1,73 @@
+.intro-card,
+.form-card,
+.upload-card {
+    padding: 28rpx;
+}
+
+.title {
+    display: block;
+    font-size: 44rpx;
+    font-weight: 800;
+    margin-bottom: 12rpx;
+}
+
+.copy {
+    display: block;
+    color: #4f594f;
+    font-size: 28rpx;
+    line-height: 1.7;
+}
+
+.block-title {
+    display: block;
+    font-size: 32rpx;
+    font-weight: 800;
+    margin-bottom: 18rpx;
+}
+
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14rpx;
+}
+
+.option {
+    min-height: 76rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999rpx;
+    background: #fff8ea;
+    border: 1rpx solid #eadbc2;
+    color: #4f594f;
+    font-weight: 700;
+}
+
+.option.active {
+    background: #3f6f5a;
+    color: #ffffff;
+    border-color: #3f6f5a;
+}
+
+.upload-row {
+    display: flex;
+    gap: 16rpx;
+    margin-bottom: 18rpx;
+}
+
+.upload-box {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 16rpx;
+    background: #f3eadc;
+    color: #b8643c;
+    font-size: 54rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 32rpx;
+}

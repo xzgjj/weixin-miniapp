@@ -1,6 +1,6 @@
-# DIY 手作门店微信小程序
+# 珂珂手作微信小程序
 
-面向实体 DIY 手作门店的微信小程序项目，用于承接门店展示、体验预约、课程活动、成品购买、定制需求、会员沉淀与后台运营。
+面向实体 DIY 手作门店的微信小程序项目，用于承接门店展示、体验预约、课程活动、成品购买、定制需求、会员沉淀与后台运营。当前品牌名暂定为“珂珂手作”，后续可替换。
 
 ## 项目定位
 
@@ -65,7 +65,7 @@
 
 ## 推荐技术方向
 
-当前仓库处于项目准备阶段，尚未建立代码脚手架。
+当前仓库已建立第一阶段静态 Demo 脚手架，暂不接真实后端和支付。
 
 推荐 0-1 阶段采用：
 
@@ -77,16 +77,89 @@
 
 完整架构规划见 [ARCHITECTURE_PLAN.md](ARCHITECTURE_PLAN.md)。
 
+## 当前实现
+
+第一阶段目标是先做“可直观看到和可点击”的小程序静态 Demo，用 mock 数据验证设计方向。
+
+已实现页面：
+
+- 首页：门店氛围、快捷入口、本周可约、商品、定制入口、门店信息。
+- 体验详情：项目介绍、价格、时长、标签、流程、预约须知。
+- 时段选择：日期条、可预约时段、已满、余 1 位、人数选择。
+- 商品详情：商品图占位、规格选择、配送/自提说明、购买按钮。
+- 定制需求：品类、用途、预算、风格、参考图占位、提交反馈。
+- 我的订单：会员信息、预约/商品/定制记录。
+
+目录结构：
+
+```text
+miniprogram/
+  app.js
+  app.json
+  app.wxss
+  sitemap.json
+  data/mock.js
+  pages/
+    home/
+    service-detail/
+    slot-select/
+    product-detail/
+    custom-request/
+    orders/
+scripts/
+  validate-miniapp.mjs
+tests/
+  mock-data.test.mjs
+  page-content.test.mjs
+```
+
 ## 构建与运行
 
-当前暂无可执行代码。建立脚手架后补充：
+当前已建立静态 Demo 脚手架，暂不接真实后端和支付。
+
+可运行命令：
 
 ```bash
-npm install
-npm run dev
 npm run lint
 npm test
+npm run build
+npm run verify
 ```
+
+命令说明：
+
+- `npm run lint`：校验小程序页面文件、基础配置和常见跳转风险。
+- `npm test`：校验 mock 数据和核心页面内容。
+- `npm run build`：当前阶段执行同一套小程序结构校验。
+- `npm run verify`：串行执行 lint、test、build。
+
+微信开发者工具预览：
+
+1. 打开微信开发者工具。
+2. 导入当前项目目录。
+3. AppID 可先使用测试号或项目实际 AppID。
+4. 编译后查看首页、体验、商城、我的四个入口。
+
+## 当前验证结果
+
+最近一次阶段验证：
+
+```bash
+npm run verify
+```
+
+结果：
+
+- `npm run lint`：通过，校验 6 个小程序页面。
+- `npm test`：通过，6 个测试用例全部通过。
+- `npm run build`：通过，当前阶段执行结构校验。
+
+已纳入自动校验的风险：
+
+- 页面文件缺失。
+- 品牌名配置缺失。
+- 动态事件绑定风险。
+- tabBar 页面错误使用 `navigateTo`。
 
 ## 版本说明
 

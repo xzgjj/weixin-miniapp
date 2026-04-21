@@ -1,0 +1,25 @@
+<view class="page orders-page">
+    <view class="member-card card">
+        <text class="member-name">珂珂手作会员</text>
+        <text class="muted">手作学徒 · 120 积分 · 2 张优惠券</text>
+    </view>
+
+    <view class="section">
+        <view class="section-title">
+            <text class="section-title-main">我的记录</text>
+            <text class="section-title-sub">预约 / 商品 / 定制</text>
+        </view>
+        <view wx:for="{{orders}}" wx:key="id" class="order-card card">
+            <view class="order-head">
+                <text class="tag tag-clay">{{item.type}}</text>
+                <text class="status">{{item.status}}</text>
+            </view>
+            <text class="order-title">{{item.title}}</text>
+            <text class="muted">{{item.time}}</text>
+            <view class="order-foot">
+                <text class="price">{{item.amount}}</text>
+                <button class="secondary-button mini-button">{{item.action}}</button>
+            </view>
+        </view>
+    </view>
+</view>

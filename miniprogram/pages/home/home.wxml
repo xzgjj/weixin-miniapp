@@ -1,0 +1,81 @@
+<view class="page home-page">
+    <view class="hero">
+        <view class="media-frame hero-media">
+            <text class="media-label">门店氛围图 · 后台可替换</text>
+        </view>
+        <view class="hero-content">
+            <text class="eyebrow">{{home.brandName}}</text>
+            <text class="hero-title">{{home.headline}}</text>
+            <text class="hero-subtitle">{{home.subtitle}}</text>
+            <view class="hero-actions">
+                <button class="primary-button" bindtap="goService">立即预约</button>
+                <button class="secondary-button" bindtap="goProduct">逛逛成品</button>
+            </view>
+        </view>
+    </view>
+
+    <view class="section quick-grid">
+        <view wx:for="{{home.quickEntries}}" wx:key="name" class="quick-item card" data-name="{{item.name}}" bindtap="handleQuickEntry">
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+
+    <view class="section">
+        <view class="section-title">
+            <text class="section-title-main">本周可约</text>
+            <text class="section-title-sub">先选喜欢的体验</text>
+        </view>
+        <scroll-view scroll-x class="h-scroll">
+            <view class="service-row">
+                <view wx:for="{{services}}" wx:key="id" class="service-card card" bindtap="goService">
+                    <view class="media-frame service-media">
+                        <text class="media-label">{{item.coverLabel}}</text>
+                    </view>
+                    <view class="service-body">
+                        <text class="service-title">{{item.title}}</text>
+                        <view class="tag-line">
+                            <text wx:for="{{item.tags}}" wx:key="*this" class="tag">{{item}}</text>
+                        </view>
+                        <view class="service-meta">
+                            <text class="price">{{item.priceText}}</text>
+                            <text class="muted">{{item.duration}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+    <view class="section">
+        <view class="section-title">
+            <text class="section-title-main">成品与材料包</text>
+            <text class="section-title-sub">可自提或配送</text>
+        </view>
+        <view class="product-grid">
+            <view wx:for="{{products}}" wx:key="id" class="product-card card" bindtap="goProduct">
+                <view class="media-frame product-media">
+                    <text class="media-label">{{item.coverLabel}}</text>
+                </view>
+                <view class="product-body">
+                    <text class="product-title">{{item.title}}</text>
+                    <text class="price">{{item.priceText}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="section custom-entry card" bindtap="goCustom">
+        <view>
+            <text class="custom-title">想做一件专属礼物？</text>
+            <text class="custom-copy">提交灵感、预算和参考图，店员会帮你整理方案。</text>
+        </view>
+        <text class="custom-link">去定制</text>
+    </view>
+
+    <view class="section store-card card">
+        <text class="store-title">{{home.store.name}}</text>
+        <text class="muted">{{home.store.address}}</text>
+        <text class="muted">{{home.store.hours}}</text>
+        <button class="secondary-button store-button" bindtap="goOrders">查看我的预约</button>
+    </view>
+</view>

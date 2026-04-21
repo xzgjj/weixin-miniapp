@@ -1,0 +1,20 @@
+{
+    "description": "珂珂手作微信小程序静态演示版",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "enhance": true,
+        "postcss": true,
+        "minified": false,
+        "compileHotReLoad": false
+    },
+    "compileType": "miniprogram",
+    "libVersion": "latest",
+    "appid": "touristappid",
+    "projectname": "keke-handmade-miniapp",
+    "condition": {},
+    "miniprogramRoot": "miniprogram/"
+}

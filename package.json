@@ -1,0 +1,12 @@
+{
+    "name": "keke-handmade-miniapp",
+    "version": "0.1.0",
+    "private": true,
+    "description": "珂珂手作微信小程序静态演示版",
+    "scripts": {
+        "lint": "node scripts/validate-miniapp.mjs",
+        "test": "node --test tests/*.test.mjs",
+        "build": "node scripts/validate-miniapp.mjs",
+        "verify": "npm run lint && npm test && npm run build"
+    }
+}

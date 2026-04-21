@@ -1,0 +1,37 @@
+<view class="page product-detail-page">
+    <view class="media-frame product-hero">
+        <text class="media-label">{{product.coverLabel}}</text>
+    </view>
+
+    <view class="section card product-info">
+        <text class="product-title">{{product.title}}</text>
+        <text class="price">{{product.priceText}}</text>
+        <view class="tag-line">
+            <text wx:for="{{product.tags}}" wx:key="*this" class="tag tag-warm">{{item}}</text>
+        </view>
+        <text class="copy">{{product.description}}</text>
+    </view>
+
+    <view class="section card sku-card">
+        <text class="block-title">规格选择</text>
+        <view class="sku-list">
+            <view wx:for="{{product.skus}}" wx:key="*this" class="sku-pill {{selectedSku === item ? 'active' : ''}}" data-sku="{{item}}" bindtap="selectSku">
+                <text>{{item}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="section card info-card">
+        <text class="block-title">配送与自提</text>
+        <text class="copy">支持到店自提，配送能力将在正式版接入后台配置。礼盒可加贺卡和包装。</text>
+    </view>
+
+    <view class="bottom-action">
+        <view class="summary">
+            <text class="muted">已选</text>
+            <text class="summary-main">{{selectedSku}}</text>
+        </view>
+        <button class="secondary-button">加入购物车</button>
+        <button class="primary-button">立即购买</button>
+    </view>
+</view>

@@ -1,0 +1,46 @@
+<view class="page custom-page">
+    <view class="card intro-card">
+        <text class="title">定制一件专属作品</text>
+        <text class="copy">先用几个选择帮我们理解你的灵感，正式版会支持上传参考图和跟进报价。</text>
+    </view>
+
+    <view class="section card form-card">
+        <text class="block-title">品类</text>
+        <view class="option-grid">
+            <view wx:for="{{options.categories}}" wx:key="*this" class="option {{form.category === item ? 'active' : ''}}" data-field="category" data-value="{{item}}" bindtap="choose">{{item}}</view>
+        </view>
+    </view>
+
+    <view class="section card form-card">
+        <text class="block-title">用途</text>
+        <view class="option-grid">
+            <view wx:for="{{options.purposes}}" wx:key="*this" class="option {{form.purpose === item ? 'active' : ''}}" data-field="purpose" data-value="{{item}}" bindtap="choose">{{item}}</view>
+        </view>
+    </view>
+
+    <view class="section card form-card">
+        <text class="block-title">预算</text>
+        <view class="option-grid">
+            <view wx:for="{{options.budgets}}" wx:key="*this" class="option {{form.budget === item ? 'active' : ''}}" data-field="budget" data-value="{{item}}" bindtap="choose">{{item}}</view>
+        </view>
+    </view>
+
+    <view class="section card form-card">
+        <text class="block-title">风格</text>
+        <view class="option-grid">
+            <view wx:for="{{options.styles}}" wx:key="*this" class="option {{form.style === item ? 'active' : ''}}" data-field="style" data-value="{{item}}" bindtap="choose">{{item}}</view>
+        </view>
+    </view>
+
+    <view class="section card upload-card">
+        <text class="block-title">参考图</text>
+        <view class="upload-row">
+            <view class="upload-box">+</view>
+            <view class="upload-box">+</view>
+            <view class="upload-box">+</view>
+        </view>
+        <text class="muted">静态 Demo 仅展示上传入口，正式版接入图片上传和校验。</text>
+    </view>
+
+    <button class="primary-button submit-button" bindtap="submitDemo">提交需求</button>
+</view>

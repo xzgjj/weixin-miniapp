@@ -1,0 +1,108 @@
+.slot-page {
+    padding-bottom: 160rpx;
+}
+
+.header-card,
+.people-card {
+    padding: 28rpx;
+}
+
+.title {
+    display: block;
+    font-size: 42rpx;
+    font-weight: 800;
+    margin-bottom: 8rpx;
+}
+
+.title-small {
+    font-size: 30rpx;
+    font-weight: 800;
+}
+
+.date-scroll {
+    white-space: nowrap;
+}
+
+.date-row {
+    display: inline-flex;
+    gap: 14rpx;
+}
+
+.date-pill {
+    display: inline-flex;
+    min-width: 150rpx;
+    min-height: 76rpx;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24rpx;
+    border-radius: 999rpx;
+    background: #fffcf7;
+    color: #4f594f;
+    border: 1rpx solid #e7ded2;
+}
+
+.date-pill.active {
+    background: #3f6f5a;
+    color: #ffffff;
+    border-color: #3f6f5a;
+}
+
+.slot-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28rpx;
+    margin-bottom: 16rpx;
+}
+
+.slot-card.selected {
+    border-color: #3f6f5a;
+    box-shadow: 0 0 0 4rpx rgba(63, 111, 90, 0.08);
+}
+
+.slot-card.disabled {
+    opacity: 0.44;
+}
+
+.slot-time {
+    display: block;
+    font-size: 34rpx;
+    font-weight: 800;
+    margin-bottom: 8rpx;
+}
+
+.slot-status {
+    color: #3f6f5a;
+    font-weight: 800;
+}
+
+.tight {
+    color: #b8643c;
+}
+
+.people-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 28rpx;
+    font-size: 34rpx;
+    font-weight: 800;
+}
+
+.counter-button {
+    width: 68rpx;
+    height: 68rpx;
+    background: #edf3ee;
+    color: #3f6f5a;
+}
+
+.summary-main {
+    display: block;
+    font-size: 30rpx;
+    font-weight: 800;
+}

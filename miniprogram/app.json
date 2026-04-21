@@ -1,0 +1,43 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/service-detail/service-detail",
+        "pages/slot-select/slot-select",
+        "pages/product-detail/product-detail",
+        "pages/custom-request/custom-request",
+        "pages/orders/orders"
+    ],
+    "window": {
+        "navigationBarTitleText": "珂珂手作",
+        "navigationBarBackgroundColor": "#F7F3EC",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#F7F3EC",
+        "backgroundTextStyle": "dark"
+    },
+    "tabBar": {
+        "color": "#6F746F",
+        "selectedColor": "#3F6F5A",
+        "backgroundColor": "#FFFCF7",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/service-detail/service-detail",
+                "text": "体验"
+            },
+            {
+                "pagePath": "pages/product-detail/product-detail",
+                "text": "商城"
+            },
+            {
+                "pagePath": "pages/orders/orders",
+                "text": "我的"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,54 @@
+<view class="page slot-page">
+    <view class="card header-card">
+        <text class="title">{{service.title}}</text>
+        <text class="muted">{{service.duration}} · {{service.priceText}}</text>
+    </view>
+
+    <view class="section">
+        <view class="section-title">
+            <text class="section-title-main">选择日期</text>
+        </view>
+        <scroll-view scroll-x class="date-scroll">
+            <view class="date-row">
+                <view wx:for="{{dates}}" wx:key="*this" class="date-pill {{selectedDate === item ? 'active' : ''}}" data-date="{{item}}" bindtap="selectDate">
+                    <text>{{item}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+    <view class="section">
+        <view class="section-title">
+            <text class="section-title-main">可预约时段</text>
+            <text class="section-title-sub">满员会置灰</text>
+        </view>
+        <view wx:for="{{service.slots}}" wx:key="id" wx:if="{{item.date === selectedDate}}" class="slot-card card {{item.status === 'full' ? 'disabled' : ''}} {{selectedSlotId === item.id ? 'selected' : ''}}" data-slot="{{item}}" bindtap="selectSlot">
+            <view>
+                <text class="slot-time">{{item.time}}</text>
+                <text class="muted">老师 {{item.teacher}}</text>
+            </view>
+            <view class="slot-status">
+                <text wx:if="{{item.status === 'full'}}">已满</text>
+                <text wx:elif="{{item.remaining === 1}}" class="tight">余 1 位</text>
+                <text wx:else>余 {{item.remaining}} 位</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="section card people-card">
+        <text class="title-small">参与人数</text>
+        <view class="counter">
+            <button class="counter-button" data-delta="-1" bindtap="changePeople">-</button>
+            <text>{{peopleCount}}</text>
+            <button class="counter-button" data-delta="1" bindtap="changePeople">+</button>
+        </view>
+    </view>
+
+    <view class="bottom-action">
+        <view class="summary">
+            <text class="muted">已选 {{selectedDate}}</text>
+            <text class="summary-main">{{peopleCount}} 人 · 定金 ¥50/人</text>
+        </view>
+        <button class="primary-button">下一步</button>
+    </view>
+</view>

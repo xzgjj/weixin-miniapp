@@ -1,0 +1,45 @@
+<view class="page detail-page">
+    <view class="media-frame detail-media">
+        <text class="media-label">{{service.coverLabel}}</text>
+    </view>
+    <view class="section card detail-card">
+        <text class="detail-category">{{service.category}}</text>
+        <text class="detail-title">{{service.title}}</text>
+        <view class="detail-meta">
+            <text class="price">{{service.priceText}}</text>
+            <text class="muted">{{service.duration}}</text>
+        </view>
+        <view class="tag-line">
+            <text wx:for="{{service.tags}}" wx:key="*this" class="tag">{{item}}</text>
+        </view>
+        <text class="detail-copy">{{service.description}}</text>
+    </view>
+
+    <view class="section card info-card">
+        <text class="block-title">你会完成什么</text>
+        <text class="muted">{{service.result}}</text>
+    </view>
+
+    <view class="section card info-card">
+        <text class="block-title">体验流程</text>
+        <view wx:for="{{service.steps}}" wx:key="*this" class="step-line">
+            <text class="step-index">{{index + 1}}</text>
+            <text>{{item}}</text>
+        </view>
+    </view>
+
+    <view class="section card info-card rules-card">
+        <text class="block-title">预约须知</text>
+        <view wx:for="{{service.rules}}" wx:key="*this" class="rule-line">
+            <text>{{item}}</text>
+        </view>
+    </view>
+
+    <view class="bottom-action">
+        <view class="summary">
+            <text class="muted">体验价</text>
+            <text class="price">{{service.priceText}}</text>
+        </view>
+        <button class="primary-button" bindtap="goSlot">立即预约</button>
+    </view>
+</view>

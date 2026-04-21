@@ -1,0 +1,153 @@
+.hero {
+    position: relative;
+}
+
+.hero-media {
+    min-height: 520rpx;
+}
+
+.hero-content {
+    position: absolute;
+    left: 28rpx;
+    right: 28rpx;
+    bottom: 30rpx;
+}
+
+.eyebrow {
+    display: block;
+    color: #3f6f5a;
+    font-size: 26rpx;
+    font-weight: 700;
+    margin-bottom: 10rpx;
+}
+
+.hero-title {
+    display: block;
+    color: #1f2420;
+    font-size: 58rpx;
+    font-weight: 800;
+    line-height: 1.08;
+    max-width: 520rpx;
+}
+
+.hero-subtitle {
+    display: block;
+    color: #4f594f;
+    font-size: 28rpx;
+    margin-top: 18rpx;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 18rpx;
+    margin-top: 28rpx;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16rpx;
+}
+
+.quick-item {
+    min-height: 106rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3f4c42;
+    font-weight: 700;
+}
+
+.h-scroll {
+    white-space: nowrap;
+}
+
+.service-row {
+    display: inline-flex;
+    gap: 18rpx;
+}
+
+.service-card {
+    display: inline-block;
+    width: 520rpx;
+    overflow: hidden;
+}
+
+.service-media {
+    border-radius: 16rpx 16rpx 0 0;
+}
+
+.service-body,
+.product-body {
+    padding: 22rpx;
+}
+
+.service-title,
+.product-title,
+.custom-title,
+.store-title {
+    display: block;
+    color: #1f2420;
+    font-size: 31rpx;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.tag-line {
+    margin-top: 16rpx;
+}
+
+.service-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12rpx;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18rpx;
+}
+
+.product-card {
+    overflow: hidden;
+}
+
+.product-media {
+    min-height: 260rpx;
+    border-radius: 16rpx 16rpx 0 0;
+}
+
+.custom-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28rpx;
+}
+
+.custom-copy {
+    display: block;
+    max-width: 500rpx;
+    color: #6f746f;
+    font-size: 25rpx;
+    line-height: 1.6;
+    margin-top: 10rpx;
+}
+
+.custom-link {
+    color: #b8643c;
+    font-weight: 800;
+}
+
+.store-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12rpx;
+    padding: 28rpx;
+}
+
+.store-button {
+    margin-top: 12rpx;
+    width: 100%;
+}

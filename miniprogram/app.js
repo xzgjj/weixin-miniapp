@@ -1,5 +1,5 @@
 App({
     globalData: {
-        brandName: '珂珂手作'
+        brandName: '玉珂diy手作'
     }
 });

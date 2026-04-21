@@ -1,6 +1,29 @@
 <view class="page product-detail-page">
-    <view class="media-frame product-hero">
-        <text class="media-label">{{product.coverLabel}}</text>
+    <view class="shop-hero">
+        <image class="shop-hero-image" src="{{hero}}" mode="aspectFill"></image>
+        <view class="shop-hero-copy">
+            <text class="shop-kicker">玉珂diy手作商城</text>
+            <text class="shop-title">成品购买放在这里</text>
+            <text class="shop-subtitle">首页负责品牌感，商城负责清楚地选款、看规格和下单。</text>
+        </view>
+    </view>
+
+    <view class="section">
+        <view class="section-title">
+            <text class="section-title-main">成品列表</text>
+            <text class="section-title-sub">可自提或配送</text>
+        </view>
+        <view class="shop-grid">
+            <view wx:for="{{products}}" wx:key="id" class="shop-card {{product.id === item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="selectProduct">
+                <view class="shop-thumb">
+                    <text>{{item.coverLabel}}</text>
+                </view>
+                <view class="shop-card-body">
+                    <text class="shop-card-title">{{item.title}}</text>
+                    <text class="shop-card-price">{{item.priceText}}</text>
+                </view>
+            </view>
+        </view>
     </view>
 
     <view class="section card product-info">
@@ -23,7 +46,7 @@
 
     <view class="section card info-card">
         <text class="block-title">配送与自提</text>
-        <text class="copy">支持到店自提，配送能力将在正式版接入后台配置。礼盒可加贺卡和包装。</text>
+        <text class="copy">支持到店自提，配送能力将在正式版接入后台配置。包装、备注和配送方式由后台统一维护。</text>
     </view>
 
     <view class="bottom-action">

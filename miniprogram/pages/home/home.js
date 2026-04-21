@@ -1,10 +1,9 @@
-const { homeData, services, products } = require('../../data/mock');
+const { homeData, services } = require('../../data/mock');
 
 Page({
     data: {
         home: homeData,
-        services,
-        products
+        services
     },
 
     goService() {
@@ -29,18 +28,5 @@ Page({
         wx.switchTab({
             url: '/pages/orders/orders'
         });
-    },
-
-    handleQuickEntry(event) {
-        const name = event.currentTarget.dataset.name;
-        if (name === '定制') {
-            this.goCustom();
-            return;
-        }
-        if (name === '礼盒') {
-            this.goProduct();
-            return;
-        }
-        this.goService();
     }
 });

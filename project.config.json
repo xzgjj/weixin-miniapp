@@ -1,20 +1,50 @@
 {
-    "description": "珂珂手作微信小程序静态演示版",
-    "packOptions": {
-        "ignore": []
-    },
-    "setting": {
-        "urlCheck": false,
-        "es6": true,
-        "enhance": true,
-        "postcss": true,
-        "minified": false,
-        "compileHotReLoad": false
-    },
-    "compileType": "miniprogram",
-    "libVersion": "latest",
-    "appid": "touristappid",
-    "projectname": "keke-handmade-miniapp",
-    "condition": {},
-    "miniprogramRoot": "miniprogram/"
+  "description": "玉珂diy手作微信小程序静态演示版",
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "glob",
+        "value": "miniprogram/assets/visuals/*.png"
+      },
+      {
+        "type": "glob",
+        "value": "miniprogram/assets/brand/avatar-source.png"
+      }
+    ],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": false,
+    "compileHotReLoad": false,
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "condition": false,
+    "swc": false,
+    "disableSWC": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "compileType": "miniprogram",
+  "libVersion": "latest",
+  "appid": "touristappid",
+  "projectname": "yuke-diy-handmade-miniapp",
+  "condition": {},
+  "miniprogramRoot": "miniprogram/",
+  "simulatorPluginLibVersion": {},
+  "editorSetting": {}
 }

@@ -1,14 +1,31 @@
 <view class="page custom-page">
-    <view class="card intro-card">
-        <text class="title">定制一件专属作品</text>
-        <text class="copy">先用几个选择帮我们理解你的灵感，正式版会支持上传参考图和跟进报价。</text>
+    <view class="custom-hero">
+        <image class="custom-hero-image" src="/assets/visuals/custom-overview.jpg" mode="aspectFill"></image>
+        <view class="custom-hero-copy">
+            <text class="title">定制一件专属作品</text>
+            <text class="copy">先看材料气质，再填写用途、预算和风格。正式版会接入图片上传、报价和制作进度。</text>
+        </view>
     </view>
 
-    <view class="section card form-card">
-        <text class="block-title">品类</text>
-        <view class="option-grid">
-            <view wx:for="{{options.categories}}" wx:key="*this" class="option {{form.category === item ? 'active' : ''}}" data-field="category" data-value="{{item}}" bindtap="choose">{{item}}</view>
+    <view class="section">
+        <view class="section-title">
+            <text class="section-title-main">选择手作主题</text>
+            <text class="section-title-sub">二级入口</text>
         </view>
+        <view class="theme-list">
+            <view wx:for="{{options.categories}}" wx:key="name" class="theme-card {{form.category === item.name ? 'active' : ''}}" data-name="{{item.name}}" bindtap="chooseCategory">
+                <image class="theme-image" src="{{item.image}}" mode="aspectFill"></image>
+                <view class="theme-copy">
+                    <text class="theme-title">{{item.name}}</text>
+                    <text class="theme-summary">{{item.summary}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="section selected-panel card">
+        <text class="block-title">当前主题：{{selectedCategory.name}}</text>
+        <text class="copy">{{selectedCategory.summary}}。下一步填写用途和预算，店员会按主题准备材料与报价。</text>
     </view>
 
     <view class="section card form-card">

@@ -3,8 +3,9 @@ const { customOptions } = require('../../data/mock');
 Page({
     data: {
         options: customOptions,
+        selectedCategory: customOptions.categories[0],
         form: {
-            category: '陶艺',
+            category: '玉石',
             purpose: '纪念日',
             budget: '¥300-800',
             style: '自然'
@@ -15,6 +16,15 @@ Page({
         const { field, value } = event.currentTarget.dataset;
         this.setData({
             [`form.${field}`]: value
+        });
+    },
+
+    chooseCategory(event) {
+        const name = event.currentTarget.dataset.name;
+        const selectedCategory = this.data.options.categories.find((item) => item.name === name);
+        this.setData({
+            selectedCategory,
+            'form.category': name
         });
     },
 

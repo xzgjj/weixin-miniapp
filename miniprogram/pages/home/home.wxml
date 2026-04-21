@@ -1,75 +1,54 @@
 <view class="page home-page">
     <view class="hero">
-        <view class="media-frame hero-media">
-            <text class="media-label">门店氛围图 · 后台可替换</text>
-        </view>
+        <image class="hero-image" src="{{home.visuals.hero}}" mode="aspectFill"></image>
         <view class="hero-content">
             <text class="eyebrow">{{home.brandName}}</text>
             <text class="hero-title">{{home.headline}}</text>
             <text class="hero-subtitle">{{home.subtitle}}</text>
             <view class="hero-actions">
-                <button class="primary-button" bindtap="goService">立即预约</button>
+                <button class="primary-button" bindtap="goCustom">开始定制</button>
                 <button class="secondary-button" bindtap="goProduct">逛逛成品</button>
             </view>
         </view>
     </view>
 
-    <view class="section quick-grid">
-        <view wx:for="{{home.quickEntries}}" wx:key="name" class="quick-item card" data-name="{{item.name}}" bindtap="handleQuickEntry">
-            <text>{{item.name}}</text>
+    <view class="section">
+        <view class="section-title">
+            <text class="section-title-main">品牌空间</text>
+            <text class="section-title-sub">先感受店里</text>
+        </view>
+        <view class="brand-card card">
+            <image class="brand-image" src="{{home.visuals.store}}" mode="aspectFill"></image>
+            <view class="brand-copy">
+                <text class="brand-title">不是来选商品，是来完成一件自己的作品</text>
+                <text class="brand-text">玉珂diy手作把玉石、陶艺、木作和香氛放在同一张工作台上，用统一的色彩和材料语言，让每一次到店都有清楚的选择和温柔的过程。</text>
+            </view>
         </view>
     </view>
 
     <view class="section">
         <view class="section-title">
-            <text class="section-title-main">本周可约</text>
-            <text class="section-title-sub">先选喜欢的体验</text>
+            <text class="section-title-main">设计主题</text>
+            <text class="section-title-sub">一套视觉，不同手作</text>
         </view>
-        <scroll-view scroll-x class="h-scroll">
-            <view class="service-row">
-                <view wx:for="{{services}}" wx:key="id" class="service-card card" bindtap="goService">
-                    <view class="media-frame service-media">
-                        <text class="media-label">{{item.coverLabel}}</text>
-                    </view>
-                    <view class="service-body">
-                        <text class="service-title">{{item.title}}</text>
-                        <view class="tag-line">
-                            <text wx:for="{{item.tags}}" wx:key="*this" class="tag">{{item}}</text>
-                        </view>
-                        <view class="service-meta">
-                            <text class="price">{{item.priceText}}</text>
-                            <text class="muted">{{item.duration}}</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </scroll-view>
-    </view>
-
-    <view class="section">
-        <view class="section-title">
-            <text class="section-title-main">成品与材料包</text>
-            <text class="section-title-sub">可自提或配送</text>
-        </view>
-        <view class="product-grid">
-            <view wx:for="{{products}}" wx:key="id" class="product-card card" bindtap="goProduct">
-                <view class="media-frame product-media">
-                    <text class="media-label">{{item.coverLabel}}</text>
-                </view>
-                <view class="product-body">
-                    <text class="product-title">{{item.title}}</text>
-                    <text class="price">{{item.priceText}}</text>
+        <view class="chapter-list">
+            <view wx:for="{{home.chapters}}" wx:key="title" class="chapter-card card">
+                <image class="chapter-image" src="{{item.image}}" mode="aspectFill"></image>
+                <view class="chapter-body">
+                    <text class="chapter-title">{{item.title}}</text>
+                    <text class="chapter-copy">{{item.copy}}</text>
                 </view>
             </view>
         </view>
     </view>
 
-    <view class="section custom-entry card" bindtap="goCustom">
-        <view>
-            <text class="custom-title">想做一件专属礼物？</text>
-            <text class="custom-copy">提交灵感、预算和参考图，店员会帮你整理方案。</text>
+    <view class="section custom-entry" bindtap="goCustom">
+        <image class="custom-image" src="{{home.visuals.custom}}" mode="aspectFill"></image>
+        <view class="custom-overlay">
+            <text class="custom-title">选择一种材料开始</text>
+            <text class="custom-copy">玉石、陶艺、木作、香氛进入定制页后再选择，不在首页堆入口。</text>
+            <button class="primary-button custom-button">进入定制</button>
         </view>
-        <text class="custom-link">去定制</text>
     </view>
 
     <view class="section store-card card">

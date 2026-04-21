@@ -1,143 +1,164 @@
-.hero {
-    position: relative;
+.home-page {
+    padding-top: 18rpx;
 }
 
-.hero-media {
-    min-height: 520rpx;
+.hero {
+    position: relative;
+    min-height: 760rpx;
+    overflow: hidden;
+    border-radius: 28rpx;
+    background: #eadfce;
+}
+
+.hero-image {
+    width: 100%;
+    height: 760rpx;
+    display: block;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(255, 252, 247, 0.1), rgba(31, 36, 32, 0.52)),
+        linear-gradient(90deg, rgba(255, 252, 247, 0.7), rgba(255, 252, 247, 0.08) 60%);
 }
 
 .hero-content {
     position: absolute;
-    left: 28rpx;
-    right: 28rpx;
-    bottom: 30rpx;
+    left: 34rpx;
+    right: 34rpx;
+    bottom: 38rpx;
+    z-index: 1;
 }
 
 .eyebrow {
     display: block;
     color: #3f6f5a;
-    font-size: 26rpx;
-    font-weight: 700;
-    margin-bottom: 10rpx;
+    font-size: 25rpx;
+    font-weight: 800;
+    margin-bottom: 12rpx;
 }
 
 .hero-title {
     display: block;
+    max-width: 560rpx;
     color: #1f2420;
     font-size: 58rpx;
-    font-weight: 800;
+    font-weight: 900;
     line-height: 1.08;
-    max-width: 520rpx;
 }
 
 .hero-subtitle {
     display: block;
-    color: #4f594f;
-    font-size: 28rpx;
+    color: #3f4c42;
+    font-size: 27rpx;
     margin-top: 18rpx;
 }
 
 .hero-actions {
     display: flex;
     gap: 18rpx;
-    margin-top: 28rpx;
+    margin-top: 30rpx;
 }
 
-.quick-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16rpx;
+.hero-actions button {
+    flex: 1;
 }
 
-.quick-item {
-    min-height: 106rpx;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #3f4c42;
-    font-weight: 700;
-}
-
-.h-scroll {
-    white-space: nowrap;
-}
-
-.service-row {
-    display: inline-flex;
-    gap: 18rpx;
-}
-
-.service-card {
-    display: inline-block;
-    width: 520rpx;
+.brand-card {
     overflow: hidden;
 }
 
-.service-media {
-    border-radius: 16rpx 16rpx 0 0;
+.brand-image {
+    width: 100%;
+    height: 340rpx;
+    display: block;
 }
 
-.service-body,
-.product-body {
-    padding: 22rpx;
+.brand-copy {
+    padding: 28rpx;
 }
 
-.service-title,
-.product-title,
+.brand-title,
+.chapter-title,
 .custom-title,
 .store-title {
     display: block;
     color: #1f2420;
-    font-size: 31rpx;
-    font-weight: 800;
-    line-height: 1.3;
+    font-size: 32rpx;
+    font-weight: 850;
+    line-height: 1.32;
 }
 
-.tag-line {
-    margin-top: 16rpx;
-}
-
-.service-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.brand-text,
+.chapter-copy,
+.custom-copy {
+    display: block;
+    color: #59635b;
+    font-size: 26rpx;
+    line-height: 1.7;
     margin-top: 12rpx;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18rpx;
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
 }
 
-.product-card {
+.chapter-card {
     overflow: hidden;
 }
 
-.product-media {
-    min-height: 260rpx;
-    border-radius: 16rpx 16rpx 0 0;
+.chapter-image {
+    width: 100%;
+    height: 260rpx;
+    display: block;
+}
+
+.chapter-body {
+    padding: 24rpx 26rpx 28rpx;
 }
 
 .custom-entry {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 28rpx;
+    position: relative;
+    min-height: 520rpx;
+    overflow: hidden;
+    border-radius: 28rpx;
+    background: #1f2420;
 }
 
-.custom-copy {
+.custom-image {
+    width: 100%;
+    height: 520rpx;
     display: block;
-    max-width: 500rpx;
-    color: #6f746f;
-    font-size: 25rpx;
-    line-height: 1.6;
-    margin-top: 10rpx;
 }
 
-.custom-link {
-    color: #b8643c;
-    font-weight: 800;
+.custom-entry::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 252, 247, 0.05), rgba(31, 36, 32, 0.58));
+}
+
+.custom-overlay {
+    position: absolute;
+    left: 28rpx;
+    right: 28rpx;
+    bottom: 28rpx;
+    z-index: 1;
+}
+
+.custom-title,
+.custom-copy {
+    color: #fffdf8;
+}
+
+.custom-button {
+    width: 260rpx;
+    margin-top: 22rpx;
 }
 
 .store-card {

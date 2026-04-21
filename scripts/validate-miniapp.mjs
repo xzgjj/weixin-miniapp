@@ -11,6 +11,18 @@ const requiredFiles = [
     'miniprogram/sitemap.json'
 ];
 
+const requiredVisualAssets = [
+    'miniprogram/assets/brand/avatar-144.png',
+    'miniprogram/assets/visuals/home-hero.jpg',
+    'miniprogram/assets/visuals/store-space.jpg',
+    'miniprogram/assets/visuals/custom-overview.jpg',
+    'miniprogram/assets/visuals/shop-hero.jpg',
+    'miniprogram/assets/visuals/theme-jade.jpg',
+    'miniprogram/assets/visuals/theme-pottery.jpg',
+    'miniprogram/assets/visuals/theme-wood.jpg',
+    'miniprogram/assets/visuals/theme-fragrance.jpg'
+];
+
 const readJson = (filePath) => {
     const fullPath = path.join(root, filePath);
     return JSON.parse(fs.readFileSync(fullPath, 'utf8'));
@@ -25,6 +37,14 @@ const assertFile = (filePath) => {
 
 for (const file of requiredFiles) {
     assertFile(file);
+}
+
+for (const file of requiredVisualAssets) {
+    assertFile(file);
+    const size = fs.statSync(path.join(root, file)).size;
+    if (size > 600 * 1024) {
+        throw new Error(`Visual asset is too large for first-screen demo: ${file}`);
+    }
 }
 
 const appConfig = readJson('miniprogram/app.json');
@@ -44,7 +64,7 @@ for (const page of appConfig.pages) {
     }
 }
 
-if (!appConfig.window?.navigationBarTitleText?.includes('珂珂手作')) {
+if (!appConfig.window?.navigationBarTitleText?.includes('玉珂diy手作')) {
     throw new Error('navigationBarTitleText should use the demo brand name');
 }
 

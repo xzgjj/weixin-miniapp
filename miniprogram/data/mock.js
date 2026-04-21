@@ -1,24 +1,40 @@
 const homeData = {
-    brandName: '珂珂手作',
-    headline: '把今天做成一件作品',
-    subtitle: '陶艺、木作、香氛、课程与礼盒定制',
+    brandName: '玉珂diy手作',
+    headline: '把手作变成可以带走的日常',
+    subtitle: '玉石、陶艺、木作、香氛与到店体验',
+    visuals: {
+        hero: '/assets/visuals/home-hero.jpg',
+        store: '/assets/visuals/store-space.jpg',
+        custom: '/assets/visuals/custom-overview.jpg',
+        shop: '/assets/visuals/shop-hero.jpg'
+    },
     store: {
-        name: '珂珂手作城市工作室',
+        name: '玉珂diy手作城市工作室',
         address: '城市中心手作街 18 号',
         hours: '周二至周日 10:00-21:00',
         phone: '请在上线前替换为门店电话'
     },
-    quickEntries: [
-        { name: '陶艺', tone: 'clay' },
-        { name: '木作', tone: 'wood' },
-        { name: '香氛', tone: 'soft' },
-        { name: '课程', tone: 'warm' },
-        { name: '礼盒', tone: 'soft' },
-        { name: '定制', tone: 'clay' }
+    chapters: [
+        {
+            title: '先看见空间',
+            copy: '门店不是货架，而是一张可以坐下来慢慢选择材料的工作台。',
+            image: '/assets/visuals/store-space.jpg'
+        },
+        {
+            title: '再选择材料',
+            copy: '玉石、陶土、木料和香氛各有气质，定制页会用主题图带你进入对应门类。',
+            image: '/assets/visuals/custom-overview.jpg'
+        },
+        {
+            title: '成品去商城',
+            copy: '已经完成的作品、常备款和可自提商品统一放在商城，不打断首页的品牌叙事。',
+            image: '/assets/visuals/shop-hero.jpg'
+        }
     ],
-    featuredServices: ['pottery-cup', 'wood-tray', 'fragrance-candle'],
-    featuredProducts: ['gift-candle', 'ceramic-cup', 'wood-box'],
+    featuredServices: ['jade-bracelet', 'pottery-cup', 'wood-tray', 'fragrance-candle'],
+    featuredProducts: ['jade-pendant', 'gift-candle', 'ceramic-cup', 'wood-box'],
     cases: [
+        '玉石手串搭配',
         '纪念日陶瓷杯',
         '木质首饰盒',
         '婚礼伴手香氛'
@@ -26,6 +42,25 @@ const homeData = {
 };
 
 const services = [
+    {
+        id: 'jade-bracelet',
+        title: '玉石手串搭配体验',
+        category: '玉石',
+        price: 16800,
+        priceText: '¥168 起',
+        duration: '90 分钟',
+        coverLabel: '玉石珠、配饰、手围测量',
+        description: '选择玉石珠、隔珠和配饰，按手围完成一条专属手串。适合礼物、纪念日和日常佩戴。',
+        result: '完成玉石手串，可当天带走，可选择基础包装。',
+        tags: ['玉石搭配', '可当天带走', '纪念日'],
+        steps: ['测量手围', '认识玉石色泽', '选择珠子配饰', '串制与收尾'],
+        rules: ['天然玉石纹理会有差异', '体验价按基础珠材计算', '升级珠材需现场补差价'],
+        slots: [
+            { id: 'j1', date: '4/21 今天', time: '10:30-12:00', remaining: 4, teacher: '玉珂', status: 'open' },
+            { id: 'j2', date: '4/21 今天', time: '16:00-17:30', remaining: 1, teacher: '玉珂', status: 'open' },
+            { id: 'j3', date: '4/22 明天', time: '14:00-15:30', remaining: 0, teacher: '玉珂', status: 'full' }
+        ]
+    },
     {
         id: 'pottery-cup',
         title: '陶艺拉坯体验',
@@ -72,11 +107,11 @@ const services = [
         priceText: '¥98 起',
         duration: '90 分钟',
         coverLabel: '精油、干花、暖色蜡杯',
-        description: '选择香型、花材和容器，完成一份适合送礼的香氛蜡烛。',
+        description: '选择香型、花材和容器，完成一份适合自用或纪念日的香氛蜡烛。',
         result: '完成香氛蜡烛，可当天带走。',
-        tags: ['礼物推荐', '可当天带走', '轻松入门'],
+        tags: ['香气搭配', '可当天带走', '轻松入门'],
         steps: ['闻香选择', '调配蜡液', '装饰花材', '包装完成'],
-        rules: ['适合 8 岁以上参与', '蜡液冷却约 20 分钟', '可加购礼盒包装'],
+        rules: ['适合 8 岁以上参与', '蜡液冷却约 20 分钟', '可选择基础包装'],
         slots: [
             { id: 'f1', date: '4/21 今天', time: '11:00-12:30', remaining: 5, teacher: '小珂', status: 'open' },
             { id: 'f2', date: '4/22 明天', time: '16:00-17:30', remaining: 1, teacher: '小珂', status: 'open' }
@@ -86,13 +121,22 @@ const services = [
 
 const products = [
     {
+        id: 'jade-pendant',
+        title: '玉石平安扣挂件',
+        priceText: '¥128 - ¥268',
+        coverLabel: '平安扣、编绳、基础包装',
+        tags: ['玉石', '成品', '可定制'],
+        description: '可选平安扣、编绳和流苏，适合日常佩戴、纪念日和到店自提。',
+        skus: ['青玉基础款', '白玉编绳款', '平安扣定制款']
+    },
+    {
         id: 'gift-candle',
-        title: '手作香薰蜡烛礼盒',
+        title: '手作香薰蜡烛',
         priceText: '¥88 - ¥128',
-        coverLabel: '香氛礼盒、贺卡、干花',
-        tags: ['礼盒', '可配送', '可自提'],
-        description: '适合生日、纪念日和伴手礼，可选木质、花香、果香三类香型。',
-        skus: ['木质香普通装', '花香礼盒装', '果香贺卡装']
+        coverLabel: '香氛蜡烛、干花、香型',
+        tags: ['香氛', '可配送', '可自提'],
+        description: '适合生日、纪念日和日常空间香气，可选木质、花香、果香三类香型。',
+        skus: ['木质香', '花香调', '果香调']
     },
     {
         id: 'ceramic-cup',
@@ -115,7 +159,28 @@ const products = [
 ];
 
 const customOptions = {
-    categories: ['陶艺', '木作', '香氛', '礼盒'],
+    categories: [
+        {
+            name: '玉石',
+            summary: '手串、平安扣、编绳与配饰',
+            image: '/assets/visuals/theme-jade.jpg'
+        },
+        {
+            name: '陶艺',
+            summary: '陶杯、泥料、釉色和烧制',
+            image: '/assets/visuals/theme-pottery.jpg'
+        },
+        {
+            name: '木作',
+            summary: '小托盘、收纳、打磨和养护',
+            image: '/assets/visuals/theme-wood.jpg'
+        },
+        {
+            name: '香氛',
+            summary: '蜡烛、精油、干花和香气搭配',
+            image: '/assets/visuals/theme-fragrance.jpg'
+        }
+    ],
     purposes: ['生日', '纪念日', '家居', '团建'],
     budgets: ['¥100-300', '¥300-800', '¥800+'],
     styles: ['自然', '极简', '复古', '可爱']
@@ -134,9 +199,9 @@ const orders = [
     {
         id: 'PD202604210002',
         type: '商品',
-        title: '手作香薰蜡烛礼盒',
+        title: '手作香薰蜡烛',
         status: '待自提',
-        time: '珂珂手作城市工作室',
+        time: '玉珂diy手作城市工作室',
         amount: '¥88',
         action: '查看自提信息'
     },
